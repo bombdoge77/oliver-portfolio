@@ -12,6 +12,7 @@ import theme from './theme/theme.js';
 import gradient from './theme/gradient.js';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
 
 export default function Project(props) {
 	const headerStyle = {
@@ -32,8 +33,9 @@ export default function Project(props) {
 	})
 
 	return (
-		<Box sx={{
-			width: 0.5, 
+		<Paper elevation={8} sx={{
+			maxWidth: '90vh',
+			width: 0.75, 
 			display: 'flex', 
 			justifyContent: 'center',
 			mb: 20,
@@ -43,7 +45,7 @@ export default function Project(props) {
 			backgroundPosition: `${time}%`
 		}}>
 
-		<Card elevation={3} sx={{
+		<Card elevation={0} sx={{
 			width: 1, 
 			m: '8px',
 			p: 4, 
@@ -83,6 +85,6 @@ export default function Project(props) {
 				</a>
 			</CardActions>
 		</Card>
-		</Box>
+		</Paper>
 		)
 }
