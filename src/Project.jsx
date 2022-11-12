@@ -56,29 +56,29 @@ export default function Project(props) {
 		}}>
 
 			<Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-				<Link href={props.link} color='inherit' underline='none'>
-					<CardHeader title={<h2>{props.header}</h2>} sx={headerStyle}/>
+				<Link href={props.project.link} color='inherit' underline='none'>
+					<CardHeader title={<h2>{props.project.title}</h2>} sx={headerStyle}/>
 				</Link>
 
 				<Divider flexItem='true' orientation='vertical' variant='middle' sx={{m: 2}}/>
 
-				<Typography>C++{props.language}</Typography>
+				<Typography>{props.project.language}</Typography>
 			</Box>
 
 
 			<Divider variant="middle" sx={{m: 1, width: 0.8}}/>
 
 			<CardContent>
-				{props.children}
+				{props.project.description}
 			</CardContent>
 
 			<CardMedia
         component="img"
-        image={props.image}
+        image={props.project.image}
       />
 
 			<CardActions sx={{justifyContent: "center"}}>
-				<a href={props.link}>
+				<a href={props.project.link}>
 					<Button variant='outlined' color='primary' endIcon={<GitHubIcon/>}>
 						View on GitHub
 					</Button>
