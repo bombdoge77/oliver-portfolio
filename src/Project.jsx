@@ -13,6 +13,7 @@ import gradient from './theme/gradient.js';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
+import { Canvas } from '@react-three/fiber';
 
 export default function Project(props) {
 	const headerStyle = {
@@ -42,7 +43,11 @@ export default function Project(props) {
 			borderRadius: 1,
 			background: gradient.primary,
 			backgroundSize: '400%',
-			backgroundPosition: `${time}%`
+			backgroundPosition: `${time}%`,
+			transition: 'all ease 200ms',
+			'&:hover': {
+				transform: 'scale(1.02)'
+			}
 		}}>
 
 		<Card elevation={0} sx={{
@@ -66,7 +71,7 @@ export default function Project(props) {
 			</Box>
 
 
-			<Divider variant="middle" sx={{m: 1, width: 0.8}}/>
+			<Divider sx={{m: 1, width: 0.8}}/>
 
 			<CardContent>
 				{props.project.description}
@@ -76,6 +81,10 @@ export default function Project(props) {
         component="img"
         image={props.project.image}
       />
+
+    	<CardContent>
+    		{props.media}
+    	</CardContent>
 
 			<CardActions sx={{justifyContent: "center"}}>
 				<a href={props.project.link}>

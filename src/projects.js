@@ -8,7 +8,7 @@ const projects = {
 	busplus: {
 		title: 'Bus+',
 		language: 'JavaScript & Rust',
-		description: 'A web application for viewing live positions of buses in Uppsala, Sweden. The application displays bus positions on top of a map using the Google Maps React API. Bus positions are provided by the Trafiklab API and are served to the client using websockets from an API built in Rust. I worked primarily with React in the frontend, building the UI and fetching data from the API.',
+		description: 'A web application for viewing live positions of buses in Uppsala, Sweden. The application displays bus positions on top of a map using the Google Maps ReactJS API. Bus positions are provided by the Trafiklab API and are served to the client using websockets from an API built in Rust. I worked primarily with React in the frontend, building the UI and fetching data from the API.',
 		link: 'https://github.com/uu-haunter/busplus'
 	},
 	portfolio: {

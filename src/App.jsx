@@ -7,6 +7,7 @@ import Box from '@mui/material/Box'
 import './App.css'
 import theme from './theme/theme.js'
 import projects from './projects.js'
+import LayeredSphere from './LayeredSphere.jsx'
 
 function App() {
   const [count, setCount] = useState(1)

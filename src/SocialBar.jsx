@@ -8,6 +8,10 @@ import theme from './theme/theme.js'
 export default function SocialBar() {
 	const buttonStyle = {
 		color: theme.palette.text.main,
+		transition: 'all ease 30ms',
+		'&:hover': {
+			transform: 'scale(1.15)'
+		}
 	}
 
 	return(
