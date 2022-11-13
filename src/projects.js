@@ -15,7 +15,7 @@ const projects = {
 		title: 'Portfolio Site',
 		language: 'JavaScript',
 		description: 'The site you are browsing right now was made using ReactJS, utilizing the Material UI component library for the UI elements.',
-		link: 'https://github.com/bombdoge77/bombdoge77.github.io'
+		link: 'https://github.com/bombdoge77/oliver-portfolio'
 	}
 }
 
