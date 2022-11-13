@@ -3,9 +3,11 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MailIcon from '@mui/icons-material/Mail';
 import Box from '@mui/material/Box';
-import theme from './theme/theme.js'
+import { useTheme } from '@mui/material';
 
-export default function SocialBar() {
+export default function SocialBar(props) {
+	const theme = useTheme()
+
 	const buttonStyle = {
 		color: theme.palette.text.main,
 		transition: 'all ease 30ms',

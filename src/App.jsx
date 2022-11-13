@@ -5,14 +5,25 @@ import SocialBar from './SocialBar.jsx'
 import Underline from './Underline.jsx'
 import Box from '@mui/material/Box'
 import './App.css'
-import theme from './theme/theme.js'
+import getTheme from './theme/theme.js'
 import projects from './projects.js'
 import LayeredSphere from './LayeredSphere.jsx'
+import { ThemeProvider } from '@mui/material/styles'
+import { createTheme } from '@mui/material'
+import Fab from '@mui/material/Fab'
+import ModeNightSharpIcon from '@mui/icons-material/ModeNightSharp';
 
 function App() {
+  const [mode, setMode] = useState('light')
+  const toggleDarkMode = () => {
+    setMode(mode === 'light' ? 'dark' : 'light')
+  }
+
   const [count, setCount] = useState(1)
   const fullHeader = "Hello, I'm Oliver."
   const header = fullHeader.slice(0, count)
+
+  const theme = createTheme(getTheme(mode))
 
   useEffect(() => {
     if (count > fullHeader.length) return
@@ -23,7 +34,26 @@ function App() {
   }, [count])
 
   return (
-    <Box className="App" sx={{backgroundColor: theme.palette.background.main, color: theme.palette.text.main}}>
+    <ThemeProvider theme={theme}>
+
+    <Box 
+    className="App" 
+    sx={{
+      backgroundColor: theme.palette.background.main, 
+      color: theme.palette.text.main
+    }}>
+
+    <Fab 
+    onClick={toggleDarkMode}
+    sx={{  
+      color: theme.palette.text.main,
+      backgroundColor: theme.palette.background.secondary,
+      bottom: '5vh',
+      right: '5vh',
+      position: 'fixed'
+    }}>
+      <ModeNightSharpIcon />
+    </Fab>
 
       <div className="title">
         <Box sx={{display: 'flex', 
@@ -60,6 +90,8 @@ function App() {
 
       </div>
     </Box>
+
+    </ThemeProvider>
   )
 }
 

@@ -8,14 +8,16 @@ import Typography from '@mui/material/Typography';
 import CardActions from '@mui/material/CardActions';
 import Button from '@mui/material/Button';
 import GitHubIcon from '@mui/icons-material/GitHub';
-import theme from './theme/theme.js';
 import gradient from './theme/gradient.js';
 import Link from '@mui/material/Link';
 import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { Canvas } from '@react-three/fiber';
+import { useTheme } from '@mui/material';
 
 export default function Project(props) {
+	const theme = useTheme()
+
 	const headerStyle = {
 		'&:hover': {
 			color: theme.palette.text.hover,
@@ -57,7 +59,9 @@ export default function Project(props) {
 			display: 'flex', 
 			flexDirection: 'column', 
 			justifyContent: 'center', 
-			alignItems: 'center'
+			alignItems: 'center',
+			background: theme.palette.background.secondary,
+			color: theme.palette.text.main
 		}}>
 
 			<Box sx={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
